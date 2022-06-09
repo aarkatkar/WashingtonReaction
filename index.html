@@ -6,7 +6,15 @@
 <script type="application/javascript" src="fastclick.js"></script>
 <script language="Javascript">
 window.addEventListener('load', function(){
-	new FastClick(document.body);
+	var testA;
+	testA = document.getElementById("testA");
+	FastClick.attach(testA);
+	testA.addEventListener('touchend', function(){
+	buttClicked();false;
+	},false);
+	testA.addEventListener('click', function(){
+	buttClicked();false;
+	},false);
 },false);</script>
 <script language="Javascript"><!--
 //global vars
@@ -269,10 +277,8 @@ a:hover {color : #000099}
 <td><input type="text" size="15" name="test1", class="testbox"></td>
 <td rowspan="6"><center><img src="./Online Reaction Time Test_files/rttest_stoplight_yellow.gif" name="stoplight" width="72" height="144" border="0"></center></td>
 <td rowspan="6">
-	<center><a href="https://faculty.washington.edu/chudler/java/redgreen.html#" onmousedown="buttClicked();return 
-false" onclick="return false" ontouchstart="buttClicked();">
-<img src="./Online Reaction Time Test_files/rttest_ready.gif" name="jensen" width="72" height="144" border="0">
-</a></center></td>
+	<center><img src="./Online Reaction Time Test_files/rttest_ready.gif" name="jensen" width="72" height="144" border="0" id="testA">
+</center></td>
 </tr>
 <tr>
 <td><center>2</center></td>
